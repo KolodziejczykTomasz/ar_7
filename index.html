@@ -12,7 +12,7 @@
     <link href="#" rel="apple-touch-icon">
 
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link, href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
    
     <link href="./assets/css/styles.css" rel="stylesheet" type="text/css"/>
     <link href="./assets/css/fonts.css" rel="stylesheet" type="text/css"/>    
@@ -20,14 +20,245 @@
 </head>
 <body id="home">
   <header id="header">
-    <nav>nawiagation</nav>
-    <div class="hero"></div>      
+    <nav>
+      <div class="nav__brand">
+        <div class="nav__brand--img"></div>
+        <div class="nav__brand--text"></div>
+      </div>
+      <div class="nav__menu">
+        <ul class="nav__menu--list">
+          <li class="nav__menu--link text--light">
+            <a href="">Home</a>
+          </li>
+          <li class="nav__menu--link text--light">
+            <a href="">Service</a>
+          </li>
+          <li class="nav__menu--link text--light">
+            <a href="">Feature</a>
+          </li>
+          <li class="nav__menu--link text--light">
+            <a href="">Product</a>
+          </li>
+          <li class="nav__menu--link text--light">
+            <a href="">Testimonial</a>
+          </li>
+          <li class="nav__menu--link text--light">
+            <a href="">FAQ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav__buttons">
+        <button class="nav__button button__login">Login</button>
+        <button class="nav__button button__signUp">Sign up</button>
+      </div>
+    </nav>
+    <div class="hero">      
+      <div id="carouselHero" class="carousel slide slider">        
+        <div class="hero__content--inner carousel-inner">
+          <div class="carousel-item active">
+            <div class="hero__content">
+              <div class="hero__head">
+                <p class="hero__head--text hero__head--title text--medium">Lessons and insights</p>
+                <p class="hero__head--text hero__head--subtitle text--medium">from 8 years</p>
+              </div>
+              <div class="hero__content--desc text--light">1 Where to grow your business as a photographer: site or social media?</div>
+              <button class="hero__button section__button button__text">Register</button>
+            </div>
+            <div class="hero__image"></div>
+          </div>
+          <div class="carousel-item">
+            <div class="hero__content">
+              <div class="hero__head">
+                <p class="hero__head--text hero__head--title text--medium">Lessons and insights</p>
+                <p class="hero__head--text hero__head--subtitle text--medium">from 8 years</p>
+              </div>
+              <div class="hero__content--desc text--light">2 Where to grow your business as a photographer: site or social media?</div>
+              <button class="hero__button section__button button__text">Register</button>
+            </div>
+            <div class="hero__image"></div>
+          </div>
+          <div class="carousel-item">
+            <div class="hero__content">
+              <div class="hero__head">
+                <p class="hero__head--text hero__head--title text--medium">Lessons and insights</p>
+                <p class="hero__head--text hero__head--subtitle text--medium">from 8 years</p>
+              </div>
+              <div class="hero__content--desc text--light">3 Where to grow your business as a photographer: site or social media?</div>
+              <button class="hero__button section__button button__text">Register</button>
+            </div>
+            <div class="hero__image"></div>
+          </div>
+        </div>  
+        <div class="carousel-indicators hero__indicators">
+          <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1" aria-label="Slide 2"></button>  
+          <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2" aria-label="Slide 3"></button>        
+        </div>   
+      </div> 
+    </div>       
   </header>
 <main>
-działa
+  <section id="clients">
+    <div class="clients__container">
+      <div class="section__header">
+        <p class="section__header--text section__header--title text--medium">Our Clients</p>
+        <p class="section__header--text section__header--subtitle text--light">We have been working with some Fortune 500+ clients</p>
+      </div>
+      <div class="clients__brands">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </section>
+  <section id="community">
+    <div class="community__container">
+      <div class="community__header section__header">
+        <p class="community__header--text section__header--text section__header--title text--medium">Manage your entire community in a single system</p>
+        <p class="section__header--text section__header--subtitle text--light">Who is Nextcent suitable for?</p>
+      </div>
+      <div class="community__cards">
+        <div class="community__card cards__short">
+          <div class="card__header">
+            <div class="card__header--icon icon--first"></div>
+            <div class="card__header--text card__header--desc text--bold">Membership Organisations</div>
+          </div>
+          <div class="card__header--content text--light">Our membership management software provides full automation of membership renewals and payments</div>
+        </div>
+        <div class="community__card cards__long">
+          <div class="card__header">
+            <div class="card__header--icon icon--second"></div>
+            <div class="card__header--text card__header--desc text--bold">National Associations</div>
+          </div>
+          <div class="card__header--content text--light">Our membership management software provides full automation of membership renewals and payments</div>
+        </div>
+        <div class="community__card cards__short">
+          <div class="card__header">
+            <div class="card__header--icon icon--third"></div>
+            <div class="card__header--text card__header--desc text--bold">Clubs And Groups</div>
+          </div>
+          <div class="card__header--content text--light">Our membership management software provides full automation of membership renewals and payments</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="body">
+    <div class="unlock">
+      <div class="pixel__img unlock__img"></div>
+      <div class="unlock__content">
+        <div class="unlock__content--heading">
+          <p class="section__header--title text--medium">
+            The unseen of spending three years at Pixelgrade
+          </p>
+          <p class="section__header--subtitle text--light">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum. Sed accumsan quam vitae est varius fringilla. Pellentesque placerat vestibulum lorem sed porta. Nullam mattis tristique iaculis. Nullam pulvinar sit amet risus pretium auctor. Etiam quis massa pulvinar, aliquam quam vitae, tempus sem. Donec elementum pulvinar odio.
+          </p>
+        </div>        
+        <button class="unlock__button section__button button__text">Learn More</button>   
+      </div>
+    </div>
+    <div class="achievements">    
+        <div class="achievements__content">
+          <div>
+            <p class="section__header--title text--medium">Helping a local</p>
+            <p class="section__header--title text--medium text--green">business reinvent itself</p>            
+          </div>
+          <p class="section__header--subtitle text--light">We reached here with our hard work and dedication</p>
+        </div>
+        <div class="achievements__counter">
+          <div class="row__first">
+            <div class="counter__item">
+              <div class="counter__icon mem__icon"></div>
+              <div>
+                <div class="counter__quantity text--bold">2,245,341</div>
+                <div class="counter__desc text--light">Members</div>
+              </div>
+            </div>
+            <div class="counter__item">
+              <div class="counter__icon club__icon"></div>
+              <div>
+                <div class="counter__quantity text--bold">46,328</div>
+                <div class="counter__desc text--light">Clubs</div>
+              </div>
+            </div>                      
+          </div>
+          <div class="row__second">
+            <div class="counter__item">
+              <div class="counter__icon event__icon"></div>
+              <div>
+                <div class="counter__quantity text--bold">828,867</div>
+                <div class="counter__desc text--light">Event Bookings</div>
+              </div>
+            </div>
+            <div class="counter__item">
+              <div class="counter__icon pay__icon"></div>
+              <div>
+                <div class="counter__quantity text--bold">1,926,436</div>
+                <div class="counter__desc text--light">Payments</div>
+              </div>
+            </div>           
+          </div>
+        </div>       
+    </div>
+    <div class="calender unlock">
+      <div class="calender__img unlock__img"></div>
+      <div class="unlock__content">
+        <div class="unlock__content--heading">
+          <p class="section__header--title text--medium">
+            How to design your site footer like we did
+          </p>
+          <p class="section__header--subtitle text--light">
+            Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque elit erat a magna. Donec quis erat at libero ultrices mollis. In hac habitasse platea dictumst. Vivamus vehicula leo dui, at porta nisi facilisis finibus. In euismod augue vitae nisi ultricies, non aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus efficitur quis massa. Praesent felis est, finibus et nisi ac, hendrerit venenatis libero. Donec consectetur faucibus ipsum id gravida.
+          </p>
+        </div>      
+        <button class="calender__button section__button button__text">Learn More</button>   
+      </div>
+    </div>
+    <div class="customer">
+      <div class="customer__img"></div>
+      <div class="customer__content">
+        <p class="customer__content--desc text--semiLight">
+          Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie, nec molestie mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales. Suspendisse eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque malesuada enim sapien, vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget efficitur libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.
+        </p>
+        <p class="customer__content--author text--bold">Tim Smith</p>
+        <p class="customer__content--profession text--light">British Dragon Boat Racing Association</p>
+        <div class="customer__content--brands">
+          <div class="customer__brands">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="customer__brands--button">
+            <div class="text--medium">Meet all customers</div><div class="icon--right"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="community">
+
+    </div>
+  </section>
 </main>
 <footer id="footer" class="footer">
-  footer
+  <div class="row__top">
+    <p class="row__top--text text--medium">Pellentesque suscipit fringilla libero eu.</p>
+    <button class="button__icon">
+      <span class="text--semiLight">Get a Demo</span>
+      <span>
+        <img src="./assets/img/footer/Right.svg" alt=""/>
+      </span>
+    </button>
+  </div>
+  <div class="row__bottom">
+  
+  </div>
 </footer>
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
