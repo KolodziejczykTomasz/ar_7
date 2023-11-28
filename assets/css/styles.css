@@ -18,6 +18,7 @@
     --neutral-silver: #F5F7FA;
     --neutral-black: #263238;
     --text-gray-900: #18191F;
+    --text-gray-300: #D9DBE1;
 }
 html {
     font-size: 62.5%; 
@@ -739,8 +740,114 @@ nav {
 .row__bottom {
     display: flex;
     padding: 64px 165px;
-    align-items: flex-start;
-    gap: 125px;
+    align-items: flex-start; 
     height: 328px;
     background: var(--neutral-black, #263238);
+}
+
+.column__address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    width: 350px;
+    margin-right: 125px;
+    color: var(--neutral-white, #FFF);
+}
+
+.column__company {
+    justify-content: flex-start;
+    width: 160px;
+    margin-right: 30px;
+}
+
+.column__support {
+    width: 160px;
+    margin-right: 30px;
+}
+
+.column__newsletter {
+    width: 255px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.column__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    margin-top: 24px;   
+}
+
+.column__item {
+    color: var(--neutral-silver, #F5F7FA);
+    font-size: 1.4rem;
+    line-height: 20px;
+    margin-left: -20px;
+}
+
+.column__header {
+    color: var(--neutral-white, #FFF);
+    font-size: 2rem;
+    line-height: 28px;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    gap: 9.891px; 
+    width: 100%;
+}
+
+.column__address--copyright {
+    display: flex;
+    flex-direction: column;
+    color: var(--neutral-silver, #F5F7FA);
+    font-size: 1.4rem;    
+    line-height: 20px;
+    gap: 8px;
+    width: 350px; 
+}
+
+.column__address--social {
+    display: flex;
+    gap: 16px;
+}
+
+.column__address--social div {
+    width: 32px;
+    height: 32px;
+}
+
+input{
+    width: 255px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    padding-left: 12px;
+    padding-top: 9px;
+    padding-bottom: 11px;  
+    border: none;  
+}
+
+input[type="email"]{
+    background: rgba(255, 255, 255, .2);
+    
+}
+
+input[type="email"]::placeholder {    
+    color: var(--text-gray-300, #D9DBE1); 
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 20px;
+    opacity: 1;
+}
+
+input.icon--send {
+    background-image: url('../img/footer/send.svg');
+    background-position: right 11px top 11px;
+    background-repeat: no-repeat;     
 }
