@@ -97,8 +97,7 @@ header {
 
 nav {
     width: 100%;
-    height: 84px;
-    padding-left: 105px;
+    height: 84px;  
     padding-right: 120px;
     display: flex;
     align-items: center;
@@ -126,7 +125,7 @@ nav {
 }
 
 .nav__menu--list {
-    display: inline-flex;
+    display: none;
     justify-content: center;
     align-items: center;
     gap: 50px;
@@ -143,16 +142,14 @@ nav {
     line-height: 24px;
 }
 
-.nav__buttons{
+.nav__buttons {    
     height: 40px;
-    width: 182px;
-    display: inline-flex;
+    width: 182px;   
     align-items: flex-start;
     gap: 14px;
 }
 
-.nav__button {
-    display: flex;
+.nav__button {   
     padding: 10px 20px;
     align-items: center;
     gap: 10px;
@@ -162,6 +159,14 @@ nav {
     line-height: 20px; 
     text-align: center; 
     border-radius: 6px;
+}
+
+.nav__top--buttons {
+    display: none;
+}
+
+.nav__left--buttons{
+    display: none;
 }
 
 .button__login {    
@@ -174,9 +179,143 @@ nav {
     color: var(--default-white, #FFF);
 }
 
+.navigation {
+    background: rgba(0, 0, 0, .7);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    overflow: hidden;
+    transition: left 0.3s;
+    width: 100%;
+    height: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 200px;
+}
+.navigation h1, .navigation h1 a {
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    z-index: 101;
+}
+.navigation h1 a {
+    display: block;
+    font-size: 40px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.navigation h1 a:hover {
+    background: rgba(255, 255, 255, .2);
+}
+.toggle-button {
+    display: none;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 101;
+}
+
+.wolverine {
+    display: inline-block;
+    height: 26px;
+    padding: 0px 0px;
+    cursor: pointer;  
+    opacity: 0.97;	 
+    transition: all 0.3s ease;
+}
+
+.wolverine span {
+    display: inline-block;
+    text-transform: uppercase;
+    line-height: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 0px;
+    width: 0px;
+    overflow: hidden;
+}
+
+.claws {
+    position: relative;
+    top: -2px;
+    width: 20px;
+    height: 4px;
+    background: #000;
+    display: inline-block;
+}
+
+.toggle-button .wolverine .claws:before, 
+.toggle-button .wolverine .claws:after {
+    display: block;
+    content: "";
+    height: 4px;
+    width: 20px;
+    background: #000;
+    position: absolute;
+    z-index: -1;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;	
+    transition: all 0.1s 0.2s ease, transform 0.2s ease;
+}
+.claws:before {
+    top: 8px;
+}
+.claws:after {
+    top: -8px;
+}
+
+.nav-control {
+    position: absolute;
+    left: -9999px;
+    width: 100%;
+    clip: rect(0, 0, 0, 0);
+}
+
+.nav-control:checked ~ .navigation {
+    left: 0;
+    opacity: 1;
+    transition: left 0.3s, opacity 0.3s;
+}
+
+.nav-control:checked ~ .navigation ul li {
+    opacity: 1;	
+    transform: translateX(0);
+}
+
+.nav-control:checked ~ .toggle-button .wolverine .claws {	
+    transition: all 0.1s 0s ease;
+    background: transparent !important;
+    z-index: 101;
+}
+
+.nav-control:checked ~ .toggle-button .wolverine .claws:before, .nav-control:checked ~ .toggle-button .wolverine .claws:after {
+    background: #fff;	 
+    transition: all 0.1s ease, transform 0.1s 0.2s ease;
+    top: 0;
+    width: 20px;
+}
+
+.nav-control:checked ~ .toggle-button .wolverine .claws:before {
+    transform: rotate3d(0, 0, 1, 45deg);
+}
+
+.nav-control:checked ~ .toggle-button .wolverine .claws:after {	
+    transform: rotate3d(0, 0, 1, -45deg);
+}
+
+
 .hero {
     width: 100%;
-    height: 599px; 
+    min-height: 599px; 
+    height: auto;
     display: flex;
     padding: 96px 144px;
     align-items: center;
@@ -186,23 +325,26 @@ nav {
 
 #carouselHero {
     display: flex; 
-    height: 407px; 
+    min-height: 407px; 
+    height: auto;
     gap: 104px;  
 }
 
 .carousel-item {  
-    width: 1152px;
-    height: 407px; 
-    gap: 104px;     
+    max-width: 1152px;
+    width: 100%;
+    min-height: 407px; 
+    gap: 104px;   
 }
 
 .hero__content {
-    width: 657px;
-    height: 276px;
+    max-width: 657px;
+    width: 100%;
+    min-height: 276px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    align-self: center; 
-    display: flex;
+    align-self: center;     
 }
 
 .hero__image {
@@ -221,7 +363,8 @@ nav {
 
 .hero__head {
     width:100%;
-    height: 152px;
+    min-height: 152px;
+    height: auto;
     align-content: space-between;
     margin-bottom: 16px;
 }
@@ -239,11 +382,13 @@ nav {
     color: var(--brand-primary, #4CAF4F);    
 }
 
-.hero__content--desc {
+.hero__content--desc p {
     color: var(--neutral-grey, #717171);
     font-size: 1.6rem;
     line-height: 24px;
-    margin-bottom: 32px;
+    margin-bottom: 32px;  
+    height: auto;
+    
 }
 
 .hero__button  {
@@ -303,12 +448,14 @@ nav {
 
 .clients__container {
     display: flex;
-    width: 1440px;
+    max-width: 1440px;
+    width: 100%;
     padding: 0px 144px;
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    height: 190px; 
+    min-height: 190px; 
+    height: auto;
     margin: 40px 0;
 }
 
@@ -339,8 +486,10 @@ nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 98px;
+    min-height: 98px;
+    height: auto;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .clients__brands div {
@@ -385,24 +534,31 @@ nav {
     flex-direction: column;
     align-items: flex-start;   
     gap: 16px;
-    width: 1440px;
-    padding: 0px 144px;
+    max-width: 1440px;
+    width: 100%;
+    height: auto;
+    padding: 0 144px;
 }
 
 .community__cards {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
+    height: auto;
     justify-content: space-between;
     margin-bottom: 42px;
 }
 
 .community__header {
     margin: 0 auto;
+    width: 100%;
+    height: auto;
 }
 
 .community__header--text {
-    width: 542px;    
+    max-width: 542px; 
+    width: 100%;   
 }
 
 .community__card {  
@@ -493,20 +649,25 @@ nav {
     justify-content: center;
     align-items: flex-start;
     gap: 48px; 
+    width: 100%;
 }
 
 .unlock {
     display: flex;
-    width: 1440px;
-    height: 433px;
-    padding: 0px 144px;
+    flex-direction: column;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 433px;
+    height: auto;
+    padding: 0px 10px;
     justify-content: space-between;
     align-items: center; 
 }
 
 .unlock__img {  
     width: 442px;
-    height: 433px;     
+    min-height: 433px;
+    height: auto;     
 }
 
 .pixel__img {
@@ -516,7 +677,9 @@ nav {
 
 .unlock__content {
     display: flex;
-    width: 661px;
+    max-width: 661px;
+    width: 100%;
+    height: auto;
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
@@ -539,8 +702,11 @@ nav {
 
 .achievements {
     display: flex;
-    width: 1440px;
-    padding: 64px 144px;
+    flex-direction: column;
+    max-width: 1440px;
+    width: 100%;
+    height: auto;
+    padding: 64px 10px;
     justify-content: space-between;
     align-items: center;
     background: var(--neutral-silver, #F5F7FA);
@@ -548,7 +714,8 @@ nav {
 
 .achievements__content {
     display: flex;
-    width: 540px;
+    max-width: 540px;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
@@ -613,10 +780,13 @@ nav {
 
 .customer {
     display: flex;
-    width: 1440px;
-    padding: 32px 144px;
+    max-width: 1440px;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 32px 10px;
     align-items: center;
-    gap: 78px;
+    gap: 78px; align-self: stretch;
     background: var(--neutral-silver, #F5F7FA);
 }
 
@@ -627,8 +797,7 @@ nav {
     background-image: url('../img/customer/image\ 9.svg');
 }
 
-.customer__content--desc {
-    align-self: stretch;
+.customer__content--desc {   
     color: var(--neutral-grey, #717171);
     font-size: 1.6rem;
     line-height: 24px;
@@ -703,30 +872,37 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    height: 506px;
-    width: 1440px;
+    min-height: 506px;
+    height: auto;
+    max-width: 1440px;
+    width: 100%;
     margin-bottom: 94.6px;
 }
 
 .community__content {
     display: flex;
-    width: 1110px;
+    max-width: 1110px;
+    width: 100%;
+    height: auto;
     flex-direction: column;
     align-items: center;
     gap: 8px;
 }
 
 .community__content p:nth-child(2){
-    width: 628px;
+    max-width: 628px;
+    width: 100%;
 }
 
 .community__cards {
     display: flex;
-    width: 1440px;
-    padding: 0px 144px;
+    max-width: 1440px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 0 10px;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .community__card {
@@ -761,20 +937,21 @@ nav {
 }
 
 .community__card--img {
-    width: 368px;
+    max-width: 368px; 
+    width: 100%;
     height: 286px;
 }
 
 .community__card--first {
-background-image: url('../img/community/image\ 18__1.svg');
+    background-image: url('../img/community/image\ 18__1.svg');
 }
 
 .community__card--second {
-background-image: url('../img/community/image\ 19__2.svg');
+    background-image: url('../img/community/image\ 19__2.svg');
 }
 
 .community__card-third {
-background-image: url('../img/community/image\ 20__3.svg');
+    background-image: url('../img/community/image\ 20__3.svg');
 }
 
 .community__card--button {
@@ -796,8 +973,10 @@ background-image: url('../img/community/image\ 20__3.svg');
 
 .row__top {
     display: flex;
-    width: 1440px;
-    height: 300px;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 300px;
+    height: auto;
     padding: 32px 0px;
     flex-direction: column;
     align-items: center;
@@ -806,7 +985,8 @@ background-image: url('../img/community/image\ 20__3.svg');
 }
 
 .row__top--text {
-    width: 857px;
+    max-width: 857px;
+    width: 100%;
     color: var(--neutral-black, #263238);
     text-align: center;
     font-size: 6.4rem;
@@ -831,7 +1011,10 @@ background-image: url('../img/community/image\ 20__3.svg');
     display: flex;
     padding: 64px 165px;
     align-items: flex-start; 
-    height: 328px;
+    min-height: 328px;
+    height: auto;
+    flex-wrap: wrap;
+    width: 100%;
     background: var(--neutral-black, #263238);
 }
 
@@ -885,7 +1068,7 @@ background-image: url('../img/community/image\ 20__3.svg');
     line-height: 28px;
 }
 
-.brand{
+.brand {
     display: flex;
     align-items: center;
     gap: 9.891px; 
@@ -923,7 +1106,7 @@ input {
     border: none;  
 }
 
-input[type="email"]{
+input[type="email"] {
     background: rgba(255, 255, 255, .2);    
 }
 
@@ -939,4 +1122,348 @@ input.icon--send {
     background-image: url('../img/footer/send.svg');
     background-position: right 11px top 11px;
     background-repeat: no-repeat;     
+}
+
+@media(max-width: 380px){
+    .clients__brands {
+        flex-direction: column;
+    }
+} 
+
+@media (max-width: 576px) {
+    .nav__left--buttons {
+        display: inline-flex;
+    }
+    .toggle-button {
+        display: block;
+        right: 10px; 
+    }
+    .nav__brand {
+        margin-left: 20px;
+    }
+    .carousel-item {         
+        flex-direction: column;  
+    }    
+    .hero {
+        width: 100%;
+        padding: 56px 10px;
+    }
+    .hero__head {
+        width: 100%;
+        padding: 56px 10px;
+    } 
+    .hero__content--desc p {
+        display: inline-block;
+        word-wrap:break-word;
+        max-width:100%;
+    } 
+    .hero__image {
+        background-size: 90%;
+        width: 100%;
+    }
+    .community__container {
+        word-wrap:break-word;
+        width: 100%;
+        padding: 56px 10px;
+    }
+    .community__cards {
+        justify-content: center;
+    }
+    .community,
+    .column__address,
+    .column__company, 
+    .column__support,
+    .column__newsletter {
+        width: 100%; 
+        margin: 30px 0; 
+    }
+    .column__address--social, 
+    .column__address--copyright {
+        width: 100%; 
+        margin: 0; 
+    }
+    .column__address--social,
+    .brand,.column__header {
+        justify-content: center;
+        width: 100%;
+    }
+    .column__newsletter,
+    .icon--send {
+        margin: 0 auto 30px auto;
+    }
+    .unlock, 
+    .clients__container,
+    .row__bottom {
+        width: 100%;
+        padding: 0 10px;
+        text-align: center;
+        margin:0 auto;
+    }
+    .unlock__content--heading p {
+        width: 100%;        
+        word-wrap: break-word;
+    }
+    .row__top--text {
+        word-wrap: break-word;
+        font-size: 5.2rem;
+    } 
+    .section__header--title, 
+    .section__header--subtitle {
+        height: auto;
+        padding: 0 10px;
+        text-align: left;
+    }
+    .customer {
+        height: auto;
+    }
+    .pixel__img, 
+    .calender__img {
+        width: 90%;
+        margin: 0 auto 40px auto;
+        background-size: 100%;
+        background-repeat: no-repeat;       
+    }
+    .customer__img {
+        width: 100%;
+        margin: 0 auto -30px auto;     
+        background-repeat: no-repeat; 
+        background-position: center;        
+    }
+    .customer__content--brands {
+        flex-direction: column;
+    }
+    .customer__brands {
+        widows: 100%;
+        background-position: top left;
+    }
+    .community__header--text, 
+    .section__header--subtitle,
+    .section__header--title,
+    .customer__content  {
+        width: 100%;
+        align-items: flex-start;
+    }
+    .community__header {
+        word-wrap: break-word;
+        padding-right: 10px;
+    }
+    .customer__brands {  
+        gap: 10px;
+    }
+    .row__first,
+    .row__second {
+        flex-direction: column;        
+    }
+    .community__card--img {
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .community__card {
+        margin-bottom: 70px;
+    }
+    .community__header {
+        gap: 15px;
+    }
+    .community__content {
+        margin-bottom: 30px;
+    }
+    .achievements__content {
+        margin-bottom: 50px;
+    }
+    .achievements__counter {
+        gap: 20px;
+    }
+    .row__first, .row__second {
+        gap: 20px;
+    }
+    .clients__container{
+        margin-top: 70px;
+    }
+    .community__container {
+        padding-bottom: 0;
+    }
+}
+
+
+@media (min-width: 577px) {
+     nav {        
+        padding-left: 20px;
+    }
+    .nav__left--buttons{
+        display: inline-flex;
+    }
+    .toggle-button {
+        display: block; 
+    }
+    .carousel-item {         
+        flex-direction: column;  
+    }
+    .hero {
+        padding: 96px 20px;       
+    }
+    .hero__content--inner {
+        width: 100%;
+    }
+    .carousel-indicators { 
+        max-width: 1440px;
+        width: calc(100vw - 20px);  
+        margin-left: 0;
+        margin-right: 0;    
+    }
+    .hero__image {       
+        margin: 0 auto;    
+    }
+   
+    .clients__brands {
+        flex-wrap: wrap;
+    }
+    .customer, .community__content  {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .unlock__content {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .customer__brands {
+        gap: 20px;
+    }
+    .community__container {
+        padding: 0 20px;
+    }
+    .community__cards {
+        justify-content: center;
+        gap: 20px;
+    }
+    .community__card {
+        margin-bottom: 40px;
+    }
+    .achievements__content {
+        margin-bottom: 50px;
+    }
+    .section__header {
+        text-align: center;
+        justify-content: center;
+    }
+    .community__content {
+        margin-bottom: 50px;
+    }
+    .community__header,.community__header--text {
+        text-align: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav__left--buttons{
+        display: inline-flex;
+    } 
+    .clients__brands {       
+        flex-wrap: wrap;
+    }
+    .customer__content, .customer__content--brands{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .calender__img {
+        margin-bottom: 50px;
+    }
+    .unlock__content{
+        padding: 0;
+    }
+    
+}
+
+@media (min-width: 992px) {
+    .nav__left--buttons{
+        display: inline-flex;
+    }
+    .toggle-button {
+        display: block; 
+    }
+    .clients__brands {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .section__header--text{
+        text-align: left;
+    }
+    .customer__content, .customer__content--brands {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .customer__brands--button {
+        width: auto;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .nav__left--buttons{
+        display: inline-flex;
+    }
+    .toggle-button {
+        display: block; 
+    }
+    .row__top--text {        
+        font-size: 6.2rem;
+    } 
+    .section__header--title, 
+    .section__header--subtitle {       
+        text-align: center;
+    }
+    .achievements__content .section__header--title {
+        text-align: left;
+    }
+    .unlock__content {
+        max-width: 661px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .nav__menu--list {
+        display: inline-flex;
+    }
+    .nav__top--buttons {
+        display: inline-flex;
+    }
+    nav {        
+        padding-left: 105px;
+    }
+    .nav__left--buttons{
+        display: none;
+    }
+    .toggle-button {
+        display: none; 
+    }
+    .carousel-item {         
+        flex-direction: row;  
+    }
+    .community__cards {
+        flex-wrap: nowrap;
+    }
+    .unlock {       
+        flex-direction: row;
+        padding: 64px 144px;
+    }
+    .achievements {
+        flex-direction: row;
+        padding: 64px 144px;
+    }
+    .customer {
+        flex-direction: row;
+        padding: 64px 144px;
+    }
+    .row__bottom {
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 1400px) {
+    .row__bottom {
+        flex-wrap: nowrap;
+    }
+
 }
