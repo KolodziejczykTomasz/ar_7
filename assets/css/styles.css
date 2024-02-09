@@ -1199,6 +1199,9 @@ input.icon--send {
         text-align: center;
         margin:0 auto;
     }
+    .unlock__button{
+        margin-left: 10px;
+    }
     .unlock__content--heading p {
         width: 100%;        
         word-wrap: break-word;
@@ -1215,6 +1218,7 @@ input.icon--send {
     }
     .customer {
         height: auto;
+        padding: 32px 20px;
     }
     .pixel__img, 
     .calender__img {
@@ -1222,6 +1226,9 @@ input.icon--send {
         margin: 0 auto 40px auto;
         background-size: 100%;
         background-repeat: no-repeat;       
+    }
+    .calender__button{
+        margin-left: 10px;
     }
     .customer__img {
         width: 100%;
@@ -1242,6 +1249,9 @@ input.icon--send {
     .customer__content  {
         width: 100%;
         align-items: flex-start;
+    }
+    .community__content {
+        margin-left: 10px;
     }
     .community__header {
         word-wrap: break-word;
@@ -1322,8 +1332,8 @@ input.icon--send {
         padding-right: 40px;
     }
     .unlock__content {
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 0;
+        padding-right: 0;
     }
     .customer__brands {
         gap: 20px;
@@ -1348,11 +1358,20 @@ input.icon--send {
     .community__content {
         margin-bottom: 50px;
     }
-    .community__header,.community__header--text {
+    .community__header,
+    .community__header--text {
         text-align: center;
         justify-content: center;
         margin: 0 auto;
     }
+    .calender__img {
+        margin-bottom: 50px;
+    }
+    .row__bottom {     
+        padding: 64px 65px;
+        justify-content: space-between;
+        gap: 70px;
+    }   
 }
 
 @media (min-width: 768px) {
@@ -1372,6 +1391,17 @@ input.icon--send {
     .unlock__content{
         padding: 0;
     }
+    .row__bottom {  
+        justify-content: space-between;
+        padding: 64px 165px;
+    }
+    .unlock__content,.unlock__content--heading p {
+        max-width: none;
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 20px;
+    }  
     
 }
 
@@ -1389,7 +1419,8 @@ input.icon--send {
     .section__header--text{
         text-align: left;
     }
-    .customer__content, .customer__content--brands {
+    .customer__content, 
+    .customer__content--brands {
         padding-left: 0;
         padding-right: 0;
     }
@@ -1415,11 +1446,13 @@ input.icon--send {
     }
     .achievements__content .section__header--title {
         text-align: left;
+    }    
+    .calender__button{
+        margin-left: 20px;
     }
-    .unlock__content {
-        max-width: 661px;
-        width: 100%;
-    }
+    .row__bottom {     
+        padding: 64px 240px;
+    } 
 }
 
 @media (min-width: 1200px) {
@@ -1445,7 +1478,7 @@ input.icon--send {
         flex-wrap: nowrap;
     }
     .unlock {       
-        flex-direction: row;
+        flex-direction: column;
         padding: 64px 144px;
     }
     .achievements {
@@ -1458,6 +1491,16 @@ input.icon--send {
     }
     .row__bottom {
         flex-wrap: wrap;
+        padding: 64px 165px;
+    }    
+}
+@media (max-width: 1200px) {
+    #carouselHero {
+        width: 100%;  
+    }
+    .hero__image {
+        width: 100%;
+        background-position: center;
     }
 }
 
@@ -1465,5 +1508,11 @@ input.icon--send {
     .row__bottom {
         flex-wrap: nowrap;
     }
-
+    .unlock {       
+        flex-direction: row;
+        padding: 64px 144px;
+    }
+    .unlock__content {
+        display: flex;
+        max-width: 661px;}
 }
